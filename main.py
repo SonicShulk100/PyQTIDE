@@ -1,10 +1,17 @@
 import sys
-from PyQt6.QtWidgets import QApplication, QWidget
+from PyQt6.QtWidgets import QApplication, QWidget, QMainWindow
 
-app = QApplication(sys.argv)
+class MainWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("PyQt IDE - IDE made in Python")
+        self.setGeometry(0, 0, 500, 500)
 
-window = QWidget()
+def main():
+    app = QApplication(sys.argv)
+    window = MainWindow()
+    window.show()
+    sys.exit(app.exec())
 
-window.show()
-
-app.exec()
+if __name__ == '__main__':
+    main()
